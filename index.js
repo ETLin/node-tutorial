@@ -1,13 +1,8 @@
-var http = require('http');
-var host = '127.0.0.1';
-var port = 5000;
+var fs = require('fs');
 
-console.log('before calling http.createServer');
-http.createServer(function (req, res) {
-  console.log(req.method + ' ' + req.url + ' HTTP/' + req.httpVersion);
-
-  res.end('ok');
-}).listen(port, host, function () {
-  console.log('HTTP server started at ' + host + ':' + port);
+fs.readFile('./package.json', function (err, data) {
+  if (err) { throw err; }
+  console.log('Your project name is ' + data.name + ' with keywords ' + data.keywords);
+  // console.log('---');
+  // console.log(data);
 });
-console.log('http.createServer and .listen called');
