@@ -12,6 +12,6 @@ express()
 .post('/upload', function (req, res) {
   console.log(req.files);
 
-  res.render('upload', {length: req.files.upload.size});
+  res.render('upload', {title: 'Upload', length: req.files.upload.size});
 })
 .listen(port, host);
