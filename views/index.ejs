@@ -2,8 +2,9 @@
 <html>
   <% include head %>
   <body>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="upload">
+    <form action="/user" method="post">
+      <input type="text" name="name" placeholder="name">
+      <input type="number" name="age" placeholder="age">
       <input type="submit" value="Send">
     </form>
   </body>

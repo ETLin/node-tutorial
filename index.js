@@ -1,4 +1,3 @@
-var fs = require('fs');
 var express = require('express');
 var controllers = require('./controllers')
 
@@ -9,5 +8,5 @@ express()
 .set('view engine', 'ejs')
 .use(express.bodyParser())
 .get('/', controllers.index)
-.post('/upload', controllers.upload)
+.post('/user', controllers.createUser)
 .listen(port, host);
